@@ -14,7 +14,8 @@ import { NavController, NavParams } from 'ionic-angular';
 export class MessagesSection {
 
     private messages = [
-        {
+        {   
+            "id": "1",
             "content": "Hola, qué tal?",
             "user": {
                 "image": "lisa-simpson.png"
@@ -22,6 +23,7 @@ export class MessagesSection {
             "group": "1"
         },
         {
+            "id": "2",
             "content": "Múltiplícate por 0",
             "user": {
                 "image": "bart-simpson.png"
@@ -29,6 +31,7 @@ export class MessagesSection {
             "group": "1"
         },
         {
+            "id": "3",
             "content": "Bart! Habla bien!",
             "user": {
                 "image": "marge-simpson.png"
