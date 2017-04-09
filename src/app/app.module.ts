@@ -12,6 +12,7 @@ import { ChatPage } from '../pages/chat/chat';
 
 //Sections
 import { GroupsSection} from '../sections/groups/groups';
+import { MessagesSection} from '../sections/messages/messages';
 
 //Commons
 import { BackgroundCardComponent} from '../commons/background-card/background-card';
@@ -22,6 +23,7 @@ import { BackgroundCardComponent} from '../commons/background-card/background-ca
         HomePage,
         ChatPage,
         GroupsSection,
+        MessagesSection,
         BackgroundCardComponent
     ],
     imports: [
