@@ -5,9 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-list>
+    <background-card *ngFor="let group of groups" [groupInfo]="group">
 
-    <ion-item *ngFor="let group of groups">
-        {{group.name}}
-    </ion-item>
-
+    </background-card>
 </ion-list>

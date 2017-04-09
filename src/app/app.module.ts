@@ -6,13 +6,15 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { GroupsSection} from '../sections/groups/groups'
+import { GroupsSection} from '../sections/groups/groups';
+import { BackgroundCardComponent} from '../commons/background-card/background-card';
 
 @NgModule({
     declarations: [
         MyApp,
         HomePage,
-        GroupsSection
+        GroupsSection,
+        BackgroundCardComponent
     ],
     imports: [
         BrowserModule,

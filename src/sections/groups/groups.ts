@@ -14,9 +14,9 @@ import { NavController, NavParams } from 'ionic-angular';
 export class GroupsSection {
 
     private groups = [
-        { "id": "1", "name": "Bar de Moe", "desc": "", "image": "moebar.jpg", "userIds": [1, 2, 3] },
-        { "id": "2", "name": "Central Nuclear", "desc": "", "image": "nuclear.jpeg", "userIds": [4] },
-        { "id": "3", "name": "Iglesia", "desc": "", "image": "church.jpg", "userIds": [1, 2, 5] }
+        { "id": "1", "name": "Bar de Moe", "description": "", "image": "moebar.jpg", "users": [1, 2, 3] },
+        { "id": "2", "name": "Central Nuclear", "description": "", "image": "nuclear.jpeg", "users": [4] },
+        { "id": "3", "name": "Iglesia", "description": "", "image": "church.jpg", "users": [1, 2, 5] }
     ];
 
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
