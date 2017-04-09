@@ -10,15 +10,15 @@ import { NavController, NavParams } from 'ionic-angular';
 @Component({
     selector: 'background-card',
     templateUrl: 'background-card.html',
-    inputs: ['groupInfo']
+    inputs: ['data']
 })
 export class BackgroundCardComponent {
 
-    private groupInfo;
+    private data;
 
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
     private getCompleteUrl () {
-        return 'images/' + this.groupInfo.image;
+        return 'images/' + this.data.image;
     }
 }
