@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { Group } from '../../providers/groups-service';
+import { GroupsService } from '../../providers/groups-service';
 
 /*
   Generated class for the Groups section.
@@ -9,17 +11,17 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
     selector: 'groups-section',
-    templateUrl: 'groups.html'
+    templateUrl: 'groups.html',
+    providers: [GroupsService]
 })
 export class GroupsSection {
 
-    private groups = [
-        { "id": "1", "name": "Bar de Moe", "description": "", "image": "moebar.jpg", "users": [1, 2, 3] },
-        { "id": "2", "name": "Central Nuclear", "description": "", "image": "nuclear.jpeg", "users": [4] },
-        { "id": "3", "name": "Iglesia", "description": "", "image": "church.jpg", "users": [1, 2, 5] }
-    ];
+    private groups: Group[];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+    constructor(private groupsService: GroupsService, public navCtrl: NavController) { 
+
+        this.groups = groupsService.getGroups();
+    }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad GroupsPage');

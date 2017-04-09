@@ -5,8 +5,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+
+//Pages
 import { HomePage } from '../pages/home/home';
+
+//Sections
 import { GroupsSection} from '../sections/groups/groups';
+
+//Commons
 import { BackgroundCardComponent} from '../commons/background-card/background-card';
 
 @NgModule({
