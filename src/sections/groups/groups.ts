@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { Group } from '../../providers/groups-service';
-import { GroupsService } from '../../providers/groups-service';
+import { Group, GroupsService } from '../../providers/groups-service';
 import { ChatPage} from '../../pages/chat/chat';
 
 /*

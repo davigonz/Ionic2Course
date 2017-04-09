@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { MessagesService } from '../../providers/messages-service';
+import { Message, MessagesService } from '../../providers/messages-service';
 
 /*
   Generated class for the Messages page.
@@ -15,7 +15,7 @@ import { MessagesService } from '../../providers/messages-service';
 })
 export class MessagesSection {
 
-    private messages;
+    private messages : Message[];
 
     constructor(private messagesService: MessagesService, public navCtrl: NavController) { 
         this.messages = messagesService.getMessages();
