@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 
 /*
@@ -16,9 +16,16 @@ export class BackgroundCardComponent {
 
     private data;
 
+    @Output()
+    cardClicked = new EventEmitter();
+
     constructor(public navCtrl: NavController, public navParams: NavParams) { }
 
     private getCompleteUrl () {
         return 'images/' + this.data.image;
+    }
+
+    private selectCard() {
+        this.cardClicked.emit(this.data);
     }
 }

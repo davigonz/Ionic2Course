@@ -8,6 +8,7 @@ import { MyApp } from './app.component';
 
 //Pages
 import { HomePage } from '../pages/home/home';
+import { ChatPage } from '../pages/chat/chat';
 
 //Sections
 import { GroupsSection} from '../sections/groups/groups';
@@ -19,6 +20,7 @@ import { BackgroundCardComponent} from '../commons/background-card/background-ca
     declarations: [
         MyApp,
         HomePage,
+        ChatPage,
         GroupsSection,
         BackgroundCardComponent
     ],
@@ -29,7 +31,8 @@ import { BackgroundCardComponent} from '../commons/background-card/background-ca
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
-        HomePage
+        HomePage,
+        ChatPage
     ],
     providers: [
         StatusBar,

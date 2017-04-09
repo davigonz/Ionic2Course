@@ -4,7 +4,7 @@
   See http://ionicframework.com/docs/v2/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-card>
+<ion-card (click)="selectCard()">
     <img src="{{getCompleteUrl()}}" />
     <div class="card-title">{{data.name}}</div>
     <div class="card-subtitle">{{data.users.length}} usuarios</div>
