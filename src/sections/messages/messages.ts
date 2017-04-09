@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
+import { MessagesService } from '../../providers/messages-service';
 
 /*
   Generated class for the Messages page.
@@ -9,38 +10,16 @@ import { NavController, NavParams } from 'ionic-angular';
 */
 @Component({
     selector: 'messages-section',
-    templateUrl: 'messages.html'
+    templateUrl: 'messages.html',
+    providers: [MessagesService]
 })
 export class MessagesSection {
 
-    private messages = [
-        {   
-            "id": "1",
-            "content": "Hola, qué tal?",
-            "user": {
-                "image": "lisa-simpson.png"
-            },
-            "group": "1"
-        },
-        {
-            "id": "2",
-            "content": "Múltiplícate por 0",
-            "user": {
-                "image": "bart-simpson.png"
-            },
-            "group": "1"
-        },
-        {
-            "id": "3",
-            "content": "Bart! Habla bien!",
-            "user": {
-                "image": "marge-simpson.png"
-            },
-            "group": "1"
-        }
-    ];
+    private messages;
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+    constructor(private messagesService: MessagesService, public navCtrl: NavController) { 
+        this.messages = messagesService.getMessages();
+    }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad MessagesPage');
