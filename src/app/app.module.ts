@@ -16,6 +16,7 @@ import { MessagesSection} from '../sections/messages/messages';
 
 //Commons
 import { BackgroundCardComponent} from '../commons/background-card/background-card';
+import { CustomItemComponent} from '../commons/custom-item/custom-item';
 
 @NgModule({
     declarations: [
@@ -24,7 +25,8 @@ import { BackgroundCardComponent} from '../commons/background-card/background-ca
         ChatPage,
         GroupsSection,
         MessagesSection,
-        BackgroundCardComponent
+        BackgroundCardComponent,
+        CustomItemComponent
     ],
     imports: [
         BrowserModule,

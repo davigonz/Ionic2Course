@@ -5,7 +5,5 @@
   Ionic pages and navigation.
 -->
 <ion-list>
-    <ion-item *ngFor = "let message of messages">
-        {{message.content}}
-    </ion-item>
+    <custom-item *ngFor = "let message of messages" [data]="message"></custom-item>
 </ion-list>
