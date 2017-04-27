@@ -11,17 +11,26 @@ import { Message, MessagesService } from '../../providers/messages-service';
 @Component({
     selector: 'messages-section',
     templateUrl: 'messages.html',
-    providers: [MessagesService]
+    providers: [MessagesService],
+    inputs: ['data']
 })
 export class MessagesSection {
 
     private messages : Message[];
 
-    constructor(private messagesService: MessagesService, public navCtrl: NavController) { 
-        this.messages = messagesService.getMessages();
+    private data;
+
+    constructor(private messagesService: MessagesService, public navCtrl: NavController) {
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad MessagesPage');
+    ngOnInit() {
+        this.messagesService.getMessages(this.data._id).subscribe(
+            data => {
+                this.messages = data;
+            },
+            err => {
+                console.log("Ouch!");
+            }
+        );
     }
 }

@@ -33,12 +33,6 @@ export class GroupsService {
     // BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
     GROUPS_URL: string = '/groups';
 
-    private groups = [
-        new Group("1", "Bar de Moes", "", "moebar.jpg", ["1", "2", "3"]),
-        new Group("2", "Central Nuclear", "", "nuclear.jpeg", ["4"]),
-        new Group("3", "Iglesia", "", "church.jpg", ["1","2","5"])
-    ];
-
     constructor(public http: Http) {
         console.log('Hello GroupsService Provider');
     }

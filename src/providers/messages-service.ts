@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Observable} from "rxjs/Observable";
 
 export class Message {
     id: string;
@@ -25,17 +26,17 @@ export class Message {
 @Injectable()
 export class MessagesService {
 
-    private messages : Message[] = [
-        new Message("1", "Hola, qué tal?", {"image": "lisa-simpson.png" }, "1"),
-        new Message("2", "Múltiplícate por 0", {"image": "bart-simpson.png" }, "1"),
-        new Message("3", "Bart! Habla bien!", {"image": "marge-simpson.png" }, "1")
-    ]
-
+    BASE_URL: string = 'http://localhost:3000';
+    // BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
+    GROUP_URL: string = '/group/';
+    MESSAGES_URL: string = '/messages/';
+    
     constructor(public http: Http) {
         console.log('Hello MessagesService Provider');
     }
 
-    public getMessages() : Message[] {
-        return this.messages;
+    public getMessages(groupId) : Observable<Message[]> {
+        return this.http.get(this.BASE_URL + this.GROUP_URL + groupId + this.MESSAGES_URL)
+            .map(result => result.json());
     }
 }

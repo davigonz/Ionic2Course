@@ -21,14 +21,6 @@ export class GroupsSection {
 
     constructor(private groupsService: GroupsService, public navCtrl: NavController) {
 
-        this.groupsService.getGroups().subscribe(
-            data => {
-                this.groups = data;
-            },
-            err => {
-                console.log("Ouch!");
-            }
-        );
     }
 
     private showChat($event) {
@@ -37,7 +29,14 @@ export class GroupsSection {
         });
     }
 
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad GroupsPage');
+    ngOnInit() {
+        this.groupsService.getGroups().subscribe(
+            data => {
+                this.groups = data;
+            },
+            err => {
+                console.log("Ouch!");
+            }
+        );
     }
 }

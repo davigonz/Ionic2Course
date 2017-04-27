@@ -19,10 +19,10 @@ export class LoginService {
         console.log('Hello LoginService Provider');
     }
 
-    public login(data) {
+    public login(credentials) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let options = new RequestOptions({ headers: headers });
-        return this.http.post(this.BASE_URL + this.LOGIN_URL, data, options)
+        return this.http.post(this.BASE_URL + this.LOGIN_URL, credentials, options)
             .map(result => result.json());
     }
 }
