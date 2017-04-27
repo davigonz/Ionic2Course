@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
+import { HomePage } from '../home/home';
 
 /*
   Generated class for the Login page.
@@ -13,10 +14,34 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class LoginPage {
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) { }
+    constructor(public navCtrl: NavController, public navParams: NavParams, 
+                private alertCtrl: AlertController) { }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad LoginPage');
     }
 
+    credentials = {
+        user : "",
+        password : ""
+    };
+
+    login() {
+
+        if (this.credentials.user == "admin" && this.credentials.password == "aaaaa") {
+
+            // push another page on to the navigation stack
+            // causing the nav controller to transition to the new page
+            // optional data can also be passed to the pushed page.
+            this.navCtrl.push(HomePage);
+
+        } else {
+
+            let alert = this.alertCtrl.create({
+                title: 'Credenciales incorrectas',
+                buttons: ['Dismiss']
+            });
+            alert.present();
+        }
+    };
 }
