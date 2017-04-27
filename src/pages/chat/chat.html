@@ -22,10 +22,10 @@
 <ion-footer>
     <ion-toolbar color="custom-grey">
         <ion-item color="custom-grey">
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="message"></ion-input>
         </ion-item>
         <ion-buttons end>
-            <button ion-button icon-right>
+            <button ion-button icon-right (click) = sendMessage(message)>>
                 Enviar
                 <ion-icon name="send"></ion-icon>
             </button>

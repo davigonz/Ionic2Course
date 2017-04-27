@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, RequestOptions, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
 import {Observable} from "rxjs/Observable";
 
@@ -30,13 +30,24 @@ export class MessagesService {
     // BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
     GROUP_URL: string = '/group/';
     MESSAGES_URL: string = '/messages/';
-    
+
     constructor(public http: Http) {
         console.log('Hello MessagesService Provider');
     }
 
     public getMessages(groupId) : Observable<Message[]> {
         return this.http.get(this.BASE_URL + this.GROUP_URL + groupId + this.MESSAGES_URL)
+            .map(result => result.json());
+    }
+
+    public addMessage(groupId, content, userId) {
+        var data = {
+            "content": content,
+            "userId": userId
+        }
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.post(this.BASE_URL + this.GROUP_URL + groupId + this.MESSAGES_URL, data, options)
             .map(result => result.json());
     }
 }

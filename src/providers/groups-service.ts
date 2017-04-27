@@ -5,14 +5,14 @@ import {Observable} from "rxjs/Observable";
 
 
 export class Group {
-    id: string;
+    _id: string;
     name: string;
     description: string;
     image: string;
     users: string[];
 
     constructor(id: string, name: string, description: string, image: string, users: string[]) {
-        this.id = id;
+        this._id = id;
         this.name = name;
         this.description = description;
         this.image = image;

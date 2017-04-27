@@ -33,6 +33,7 @@ export class LoginPage {
         this.loginService.login(JSON.stringify(this.credentials)).subscribe(
             data => {
                 localStorage.setItem('token', data.userToken);
+                localStorage.setItem('userId', data.userId);
                 // push HomePage on to the navigation stack
                 this.navCtrl.push(HomePage);
             },
