@@ -29,7 +29,7 @@ export class Group {
 export class GroupsService {
 
     private groups = [
-        new Group("1", "Bar de Moe", "", "moebar.jpg", ["1", "2", "3"]),
+        new Group("1", "Bar de Moes", "", "moebar.jpg", ["1", "2", "3"]),
         new Group("2", "Central Nuclear", "", "nuclear.jpeg", ["4"]),
         new Group("3", "Iglesia", "", "church.jpg", ["1","2","5"])
     ];

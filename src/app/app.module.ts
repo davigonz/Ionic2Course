@@ -9,6 +9,7 @@ import { MyApp } from './app.component';
 //Pages
 import { HomePage } from '../pages/home/home';
 import { ChatPage } from '../pages/chat/chat';
+import { LoginPage } from '../pages/login/login';
 
 //Sections
 import { GroupsSection} from '../sections/groups/groups';
@@ -23,6 +24,7 @@ import { CustomItemComponent} from '../commons/custom-item/custom-item';
         MyApp,
         HomePage,
         ChatPage,
+        LoginPage,
         GroupsSection,
         MessagesSection,
         BackgroundCardComponent,
@@ -36,7 +38,8 @@ import { CustomItemComponent} from '../commons/custom-item/custom-item';
     entryComponents: [
         MyApp,
         HomePage,
-        ChatPage
+        ChatPage,
+        LoginPage
     ],
     providers: [
         StatusBar,
