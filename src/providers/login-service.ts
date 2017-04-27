@@ -11,7 +11,8 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class LoginService {
 
-    BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
+    BASE_URL: string = 'http://localhost:3000';
+    // BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
     LOGIN_URL: string = '/login';
 
     constructor(public http: Http) {

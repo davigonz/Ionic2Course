@@ -19,9 +19,16 @@ export class GroupsSection {
 
     private groups: Group[];
 
-    constructor(private groupsService: GroupsService, public navCtrl: NavController) { 
+    constructor(private groupsService: GroupsService, public navCtrl: NavController) {
 
-        this.groups = groupsService.getGroups();
+        this.groupsService.getGroups().subscribe(
+            data => {
+                this.groups = data;
+            },
+            err => {
+                console.log("Ouch!");
+            }
+        );
     }
 
     private showChat($event) {

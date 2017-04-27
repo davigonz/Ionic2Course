@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+import {Observable} from "rxjs/Observable";
 
 
 export class Group {
@@ -28,6 +29,10 @@ export class Group {
 @Injectable()
 export class GroupsService {
 
+    BASE_URL: string = 'http://localhost:3000';
+    // BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
+    GROUPS_URL: string = '/groups';
+
     private groups = [
         new Group("1", "Bar de Moes", "", "moebar.jpg", ["1", "2", "3"]),
         new Group("2", "Central Nuclear", "", "nuclear.jpeg", ["4"]),
@@ -38,7 +43,8 @@ export class GroupsService {
         console.log('Hello GroupsService Provider');
     }
 
-    public getGroups() : Group[] {
-        return this.groups;
+    public getGroups() : Observable<Group[]> {
+        return this.http.get(this.BASE_URL + this.GROUPS_URL)
+            .map(result => result.json());
     }
 }
