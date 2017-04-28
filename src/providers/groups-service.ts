@@ -29,8 +29,8 @@ export class Group {
 @Injectable()
 export class GroupsService {
 
-    BASE_URL: string = 'http://localhost:3000';
-    // BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
+    // BASE_URL: string = 'http://localhost:3000';
+    BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
     GROUPS_URL: string = '/groups';
 
     constructor(public http: Http) {

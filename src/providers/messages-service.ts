@@ -26,8 +26,8 @@ export class Message {
 @Injectable()
 export class MessagesService {
 
-    BASE_URL: string = 'http://localhost:3000';
-    // BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
+    // BASE_URL: string = 'http://localhost:3000';
+    BASE_URL: string = 'http://fr-docker02.solidgear.es:13000';
     GROUP_URL: string = '/group/';
     MESSAGES_URL: string = '/messages/';
 

@@ -35,10 +35,11 @@ export class ChatPage {
             this.group._id, this.message, localStorage.getItem('userId')
         ).subscribe(
             data => {
-                debugger;
+                // Rerender messages component
+                // Push the new message to it
             },
             err => {
-                debugger;
+                
             }
         );
     }
